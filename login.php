@@ -25,7 +25,7 @@ require __DIR__ . '/includes/header.php';
 
 <div class="login-wrap">
 
-  <img src="assets/images/jehan-logo.png"
+  <img src="assets/images/jehan-logo.webp"
        alt="<?= e(STORE_NAME) ?>"
        class="login-logo">
 

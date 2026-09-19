@@ -15,7 +15,7 @@
 <header class="top no-print">
 
   <div class="brand">
-    <img src="assets/images/jehan-logo.png"
+    <img src="assets/images/jehan-logo.webp"
          alt="Jehan Grocery Logo"
          class="store-logo">
 

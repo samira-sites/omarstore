@@ -1,11 +1,3 @@
--- Utang System — Customer Credit Management — Database Schema
--- Run this once to set up the database.
--- NOTE: if your host already created the database for you (e.g. via cPanel),
--- delete the CREATE DATABASE and USE lines below before importing.
-
-CREATE DATABASE IF NOT EXISTS utang_system CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE utang_system;
-
 CREATE TABLE customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
