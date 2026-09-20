@@ -15,8 +15,8 @@
 <header class="top no-print">
 
   <div class="brand">
-    <img src="assets/images/jehan-logo.webp"
-         alt="Jehan Grocery Logo"
+    <img src="assets/images/omar-logo.webp"
+         alt="Omar Grocery Logo"
          class="store-logo">
 
     <span class="store-name">

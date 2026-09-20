@@ -3,11 +3,11 @@
   --paper: #faf8f4;
   --card: #ffffff;
   --line: #e4ddd0;
-  --olive: #4b5d3a;
-  --olive-dark: #3a4a2c;
-  --rust: #b5502f;
+  --olive: #c4070e;
+  --olive-dark: #5c1619;
+  --rust: #fb0a0a;
   --rust-light: #f4e2d8;
-  --muted: #766f60;
+  --muted: #032905;
   --radius: 10px;
 }
 
@@ -20,7 +20,6 @@ body {
   color: var(--ink);
   line-height: 1.5;
 }
-```css
 /* =========================
    TOP NAVBAR
    ========================= */
@@ -279,11 +278,11 @@ a { color: var(--olive-dark); }
   min-height: 48px;
 }
 
-.btn-primary { background: var(--olive); color: #fff; }
-.btn-primary:hover { background: var(--olive-dark); }
+.btn-primary { background: rgb(1, 101, 1); color: #fff; }
+.btn-primary:hover { background:rgba(1, 101, 1, 0.755); }
 
 .btn-rust { background: var(--rust); color: #fff; }
-.btn-rust:hover { background: #9c4326; }
+.btn-rust:hover { background:  #fb0a0ac6; }
 
 .btn-outline {
   background: transparent;
@@ -291,7 +290,14 @@ a { color: var(--olive-dark); }
   color: var(--ink);
 }
 
-.btn-block { width: 100%; }
+.btn-block {
+   width: 100%;
+   background: #222;
+   color: #faf8f4;
+   }
+   .btn-block:hover{
+    background: #222222ec;
+   }
 
 .btn-row {
   display: grid;
