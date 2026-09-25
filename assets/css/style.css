@@ -1,13 +1,13 @@
 :root {
-  --ink: #1c2321;
-  --paper: #faf8f4;
+  --ink: #17201b;
+  --paper: #f7f6f1;
   --card: #ffffff;
-  --line: #e4ddd0;
-  --olive: #c4070e;
-  --olive-dark: #5c1619;
-  --rust: #fb0a0a;
-  --rust-light: #f4e2d8;
-  --muted: #032905;
+  --line: #deded6;
+  --olive: #245c48;
+  --olive-dark: #194535;
+  --rust: #a65a3a;
+  --rust-light: #f3e7df;
+  --muted: #68716c;
   --radius: 10px;
 }
 
@@ -24,7 +24,7 @@ body {
    TOP NAVBAR
    ========================= */
 
-.top {
+   .top {
     min-height: 70px;
     padding: 10px 24px;
     display: flex;
@@ -34,7 +34,11 @@ body {
     box-sizing: border-box;
 }
 
-/* Logo + store information */
+
+/* =========================
+   BRAND
+   ========================= */
+
 .brand {
     display: flex;
     align-items: center;
@@ -47,6 +51,7 @@ body {
     height: 50px;
     object-fit: contain;
     flex-shrink: 0;
+    border-radius: 50%;
 }
 
 .store-name {
@@ -67,32 +72,214 @@ body {
     font-weight: 400;
 }
 
-.top > a {
-    flex-shrink: 0;
+
+/* =========================
+   DESKTOP NAVIGATION
+   ========================= */
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
     white-space: nowrap;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+
+/* Change Password */
+
+.top-nav a[href="change_password.php"] {
+    background: #f3f3f3;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.top-nav a[href="change_password.php"]:hover {
+    background: #e8e8e8;
+}
+
+
+/* Log out */
+
+.top-nav a[href="logout.php"] {
+    background: #b94a3a;
+    color: #fff;
+    border: 1px solid #b94a3a;
+}
+
+.top-nav a[href="logout.php"]:hover {
+    background: #9f3e31;
 }
 
 
 /* =========================
-   TABLET
+   HAMBURGER BUTTON
    ========================= */
 
-@media (max-width: 768px) {
+   .menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    background: #fff;
+    cursor: pointer;
 
-    .top {
-        padding: 10px 16px;
-        gap: 12px;
-    }
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
 
-    .store-logo {
-        width: 45px;
-        height: 45px;
-    }
+    flex-shrink: 0;
 
-    .store-name {
-        font-size: 17px;
-    }
+    -webkit-tap-highlight-color: transparent;
+}
 
+.menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+
+    transform-origin: center;
+    transition:
+        transform 0.25s ease,
+        opacity 0.2s ease;
+}
+
+
+/* Hamburger → X */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+   .mobile-menu {
+    position: absolute;
+    top: 85px;
+    right: 12px;
+
+    width: 220px;
+    padding: 8px;
+
+    background: var(--card);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    z-index: 1000;
+
+    /* Hidden state */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-15px);
+
+    pointer-events: none;
+
+    /* Smooth drop */
+    transition:
+        opacity 0.25s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+/* =========================
+   OPEN MENU
+   ========================= */
+
+.mobile-menu.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+/* Open menu */
+
+.mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Menu links */
+
+.mobile-menu a {
+    display: flex;
+    align-items: center;
+
+    min-height: 42px;
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    color: var(--ink);
+    background: transparent;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* Hover */
+
+.mobile-menu a:hover {
+    background: #f3f3ef;
+}
+
+
+/* Logout */
+
+.mobile-menu .mobile-logout {
+    background: #a65a3a;
+    color: #fff;
+}
+
+.mobile-menu .mobile-logout:hover {
+    background: #8f4930;
 }
 
 
@@ -100,43 +287,32 @@ body {
    MOBILE
    ========================= */
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
 
     .top {
-        min-height: auto;
-        padding: 10px 12px;
-        gap: 8px;
+        position: relative;
     }
 
-    .brand {
-        gap: 8px;
+    .top-nav {
+        display: none;
     }
 
-    .store-logo {
-        width: 40px;
-        height: 40px;
+    .menu-toggle {
+        display: flex;
     }
+}
 
-    .store-name {
-        display: block;
-        font-size: 15px;
-        line-height: 1.25;
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 420px) {
+
+    .mobile-menu {
+        right: 10px;
+        width: 210px;
     }
-
-    .brand-separator {
-        margin: 0 3px;
-    }
-
-    .brand-subtitle {
-        display: block;
-        font-size: 13px;
-        margin-top: 2px;
-    }
-
-    .top > a {
-        font-size: 14px;
-    }
-
 }
 
 
@@ -146,29 +322,11 @@ body {
 
 @media (max-width: 360px) {
 
-    .top {
-        padding: 8px 10px;
+    .mobile-menu {
+        right: 8px;
+        width: 200px;
     }
-
-    .store-logo {
-        width: 36px;
-        height: 36px;
-    }
-
-    .store-name {
-        font-size: 14px;
-    }
-
-    .brand-subtitle {
-        font-size: 12px;
-    }
-
-    .top > a {
-        font-size: 13px;
-    }
-
 }
-
 .login-logo {
   display: block;
   width: 100%;
@@ -292,11 +450,12 @@ a { color: var(--olive-dark); }
 
 .btn-block {
    width: 100%;
-   background: #222;
-   color: #faf8f4;
+   background: transparent;
+   color: #111;
+   outline: 1px solid green;
    }
    .btn-block:hover{
-    background: #222222ec;
+    outline: 1px solid rgba(243, 8, 8, 0.81);
    }
 
 .btn-row {
@@ -439,6 +598,42 @@ textarea { resize: vertical; min-height: 70px; }
   max-width: 360px;
   margin: 60px auto;
   padding: 0 16px;
+}
+
+/* =========================
+   Forgot Password
+   ========================= */
+
+.forgot-password {
+  display: block;
+  width: fit-content;
+  margin: 12px auto 0;
+  color: var(--green);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot-password:hover {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .forgot-password {
+    margin-top: 14px;
+    font-size: 0.88rem;
+    padding: 5px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .forgot-password {
+    font-size: 0.84rem;
+  }
 }
 
 .center-note {

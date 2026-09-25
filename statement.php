@@ -27,10 +27,10 @@ require __DIR__ . '/includes/header.php';
   <div class="figure balance <?= (float) $customer['current_balance'] > 0 ? 'owing' : 'clear' ?>" style="font-size:1.8rem;">
     <?= format_money((float) $customer['current_balance']) ?>
   </div>
-  <div class="label">Total owed</div>
+  <div class="label">Total ng Utang</div>
 </div>
 
-<button onclick="window.print()" class="btn btn-primary view-print btn-block no-print " style="margin-bottom:20px;">Print statement</button>
+<button onclick="window.print()" class="btn btn-primary btn-block no-print " style="margin-bottom:20px;">Print statement</button>
 
 <div class="card" style="padding:0;">
   <?php if (empty($transactions)): ?>

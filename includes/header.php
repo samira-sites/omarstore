@@ -14,21 +14,42 @@
 <?php if (is_logged_in()): ?>
 <header class="top no-print">
 
-  <div class="brand">
-    <img src="assets/images/omar-logo.webp"
-         alt="Omar Grocery Logo"
-         class="store-logo">
+    <div class="brand">
+        <img src="assets/images/omar-logo.webp"
+             alt="Omar Grocery Logo"
+             class="store-logo">
 
-    <span class="store-name">
-      <?= e(STORE_NAME) ?>
-      <span class="brand-separator">—</span>
-      <span class="brand-subtitle">Listahan ng Utang</span>
-    </span>
-  </div>
+        <span class="store-name">
+            <?= e(STORE_NAME) ?>
+            <span class="brand-separator">—</span>
+            <span class="brand-subtitle">Listahan ng Utang</span>
+        </span>
+    </div>
 
-  <a href="logout.php">Log out</a>
+    <!-- Desktop Navigation -->
+    <nav class="top-nav">
+        <a href="change_password.php">Change Password</a>
+        <a href="logout.php">Log out</a>
+    </nav>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
 </header>
+
+<!-- Mobile Menu -->
+<nav class="mobile-menu no-print" id="mobileMenu">
+    <a href="change_password.php">Change Password</a>
+    <a href="logout.php" class="mobile-logout">Log out</a>
+</nav>
 <?php endif; ?>
 
 <div class="wrap">

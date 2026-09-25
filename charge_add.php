@@ -45,7 +45,7 @@ require __DIR__ . '/includes/header.php';
     <input type="number" id="amount" name="amount" step="0.001" min="0.001" required autofocus inputmode="decimal">
   </div>
   <div class="field">
-    <label for="description">What did they buy? (optional)</label>
+    <label for="description">Ano ang mga inutang? (optional)</label>
     <textarea id="description" name="description" placeholder="e.g. rice, eggs, milk"></textarea>
   </div>
   <button type="submit" class="btn btn-rust btn-block">Add charge</button>

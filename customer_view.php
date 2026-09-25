@@ -25,12 +25,12 @@ require __DIR__ . '/includes/header.php';
   <div class="figure balance <?= (float) $customer['current_balance'] > 0 ? 'owing' : 'clear' ?>" style="font-size:1.8rem;">
     <?= format_money((float) $customer['current_balance']) ?>
   </div>
-  <div class="label">Current balance owed</div>
+  <div class="label">Kasalukuyang Utang</div>
 </div>
 
 <div class="btn-row">
-  <a href="charge_add.php?customer_id=<?= $id ?>" class="btn btn-rust">Add charge</a>
-  <a href="payment_add.php?customer_id=<?= $id ?>" class="btn btn-primary">Record payment</a>
+  <a href="charge_add.php?customer_id=<?= $id ?>" class="btn btn-rust">Mag Utang</a>
+  <a href="payment_add.php?customer_id=<?= $id ?>" class="btn btn-primary">Mag Bayad</a>
 </div>
 
 <a href="statement.php?customer_id=<?= $id ?>" class="btn btn-outline btn-block" style="margin-bottom:20px;">View / print statement</a>
