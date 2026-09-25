@@ -157,7 +157,7 @@ body {
     display: block;
     width: 20px;
     height: 2px;
-    background: #333;
+    background: var(--olive);
     border-radius: 2px;
 
     transform-origin: center;
