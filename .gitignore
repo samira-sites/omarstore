@@ -1,3 +1,5 @@
 config.php
 temp.php
 test_time.php
+vendor/
+error_log
