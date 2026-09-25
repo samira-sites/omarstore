@@ -45,13 +45,17 @@ body {
     gap: 10px;
     min-width: 0;
 }
-
 .store-logo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    flex-shrink: 0;
-    border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 50%;
+
+  box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.25),
+      0 8px 20px rgba(0, 0, 0, 0.18),
+      0 0 12px rgba(220, 0, 0, 0.20);
 }
 
 .store-name {
